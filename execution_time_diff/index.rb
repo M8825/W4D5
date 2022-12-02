@@ -62,3 +62,31 @@ p largest_contiguous_subsum(list)
 
 list = [-5, -1, -3]
 p largest_contiguous_subsum(list) # => -1 (from [-1])
+
+def okay_two_sum?(arr, target)
+
+sums = []
+
+   (0...arr.length - 1).each do |i|
+      sums << arr[i] + arr[i + 1]
+   end
+
+   merge_sort(sums)
+
+end
+
+
+def merge_sort(arr)
+  return arr if arr.length <= 1
+
+  mid = arr.length / 2
+
+  left = merge_sort(arr[0...mid])
+  right = merge_sort(arr[mid..-1])
+
+  merge(left, right)
+end
+
+def merge(left, right)
+   
+end
